@@ -1,0 +1,57 @@
+<%- include('partials/_header') -%> 
+<body>
+	<div class="tm-page-wrap mx-auto">
+		<div class="position-relative">
+			
+      <%- include('partials/_navigation') -%> 
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-1">
+				<div class="text-center">
+					<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 text-white mx-auto">Background image can be fixed. Content will simply slide over.</p>
+				</div>
+            </div>
+
+			<!-- Header image -->
+            <div id="tm-fixed-header-bg"></div>
+		</div>
+
+		<!-- Page content -->
+		<div class="container-fluid">
+			<div class="mx-auto tm-content-container">
+				<main>
+          
+					<div class="row mb-5 pb-5">
+						<dv class="offset-2 col-xl-8 mb-5">
+							<img src="<%= photo.image  %> " alt="Image" class="tm-img-content ">
+						</dv>
+						
+						<div class="offset-1 col-xl-6 col-lg-5">
+						
+							<div class="tm-video-description-box px-5">
+								<h2 class="mb-5 tm-video-title"><%= photo.title %> </h2>
+								<p class="mb-4"> <%= photo.description  %> </p>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-5">
+							<!-- Share box -->
+							<div class="tm-bg-gray tm-share-box">
+								<a href="/photos/edit/<%= photo._id %> " class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download tm-icon-download">
+									<span id="tm-likes-count">Update Photo</span>
+								</a>
+								<div>
+									<a href="/photos/<%= photo._id %>?_method=DELETE" class="btn btn-secondary p-0 tm-btn-animate tm-btn-download "
+										
+										onclick="return confirm('Are you sure?')"><span style="color: white;">Delete Photo</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</main>
+
+			<%- include('partials/_footer') -%> 
+
+	  <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>
