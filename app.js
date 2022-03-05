@@ -15,7 +15,7 @@ mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
     // declare port number
-    const PORT = 4000;
+    const PORT = process.env.PORT || 4000;
     // listen for request
     app.listen(PORT);
   })
